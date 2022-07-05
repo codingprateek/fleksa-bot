@@ -1,0 +1,73 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - place_order
+  - cancel_order
+  - id_given
+  - utter_order_name
+  - ask_serving
+  - select_serving
+  - utter_booking_when
+
+
+actions: 
+  - action_cancel_order
+  - action_trigger_order
+  - action_place_order
+  - action_servings
+  - action_booking
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_info:
+  - text: "Please share your order Id"
+
+  utter_id:
+  - text: "Order for {id} is cancelled."
+
+  utter_sides:
+  - text: "Please tye your selection from the listed sides menu.{sides}"
+
+  utter_order_placed:
+  - text: "'order_name': {order_name} , 'status': 'successful'"
+
+  utter_serving_list:
+  - text: "Please select your desired serving type:- Dining, Delivery or Pickup."
+
+  utter_serving:
+  - text: "Your selected serving is {selected_serving}"
+
+  utter_date_time:
+  - text: "Select the date and time for your booking."
+
+  utter_final_booking:
+  - text: "Your booking details are: {datetime}"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,61 @@
+version: "2.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: placing order
+  steps: 
+  - intent: greet
+  - action: utter_greet
+  - intent: place_order
+  - action: action_trigger_order
+  - intent: utter_order_name
+  - action: action_place_order
+  
+- story: cancelling order
+  steps: 
+  - intent: greet
+  - action: utter_greet
+  - intent: cancel_order
+  - action: utter_info
+  - intent: id_given
+  - action: action_cancel_order
+
+- story: serving selection
+  steps: 
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_serving
+  - action: utter_serving_list
+  - intent: select_serving
+  - action: action_servings
+  - action: utter_date_time
+  - intent: utter_booking_when
+  - action: action_booking
+
